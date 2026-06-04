@@ -16,7 +16,7 @@ class NL_BE_Push_Sync_Sender {
 
     public function send_post($post_id, $post, $update) {
 
-        // جلوگیری autosave / revision
+        // autosave / revision
         if (wp_is_post_autosave($post_id) || wp_is_post_revision($post_id)) return;
 
         // Only publish
