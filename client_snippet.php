@@ -1,5 +1,11 @@
 <?php
 
+/*
+|--------------------------------------------------------------------------
+| NL Site — Vacatures Post Receiver Server
+|--------------------------------------------------------------------------
+*/
+
 add_action('rest_api_init', function () {
 
     /**
@@ -24,12 +30,7 @@ add_action('rest_api_init', function () {
 /**
  * Verify secret key
  */
-// function nl_be_verify_secret() {
 
-//     $secret = $_SERVER['HTTP_X_SYNC_SECRET'] ?? '';
-
-//     return $secret === 'c7A$kL9vP2!rX5@Zq8TnYwM4e3s1u0';
-// }
 function nl_be_verify_secret(WP_REST_Request $request) {
 
     $secret = $request->get_header('x-sync-secret');
